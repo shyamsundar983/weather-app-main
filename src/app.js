@@ -21,6 +21,7 @@ const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
 
 let app = express()
+const port = process.env.PORT || 3000  //on local we use 3000 port and env by heroku
 
 // console.log(__filename)
 // console.log(__dirname)
@@ -125,7 +126,7 @@ app.get('*',(req,res) => {
   //res.send("Hello this is help page") static 
   })
 
-//calling the server 
-app.listen(3000,() => {
-    console.log('setting up a new server in port 3000')
+//calling the server change it when we use heroku
+app.listen(port,() => {
+    console.log('setting up a new server in port' + port)
 })
